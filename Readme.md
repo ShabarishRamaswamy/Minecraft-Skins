@@ -1,1 +1,1 @@
-This is a Test
+This is an Application that will show the Minecraft Skin of any player with the help of their username.
