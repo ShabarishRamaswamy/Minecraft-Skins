@@ -12,14 +12,15 @@ app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 
 // Setting HandleBars
-// hbs.registerPartial(partialsPath)
+hbs.registerPartials(partialsPath)
 
 // Routes
 const usernameRouter = require('./routers/playerDB')
+const craftarRouter = require('./routers/craftar')
 app.use(usernameRouter)
-app.get('/', (req, res) => {
-    res.render('index', { title: 'Hello Everyone' });
-})
+app.use(craftarRouter)
+
+
 
 // Deploying the local server
 app.listen(PORT, () => {
