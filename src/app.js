@@ -16,13 +16,10 @@ hbs.registerPartials(partialsPath)
 
 // Routes
 const usernameRouter = require('./routers/playerDB')
-// const craftarRouter = require('./routers/craftar')
 app.use(usernameRouter)
-// app.use(craftarRouter)
 
 
-
-// Deploying the local server
+// Deploying the local server or on the Port of a Production Server
 app.listen(PORT, () => {
     console.log(`The App has started on Port ${PORT}`)
 })

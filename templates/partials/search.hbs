@@ -16,6 +16,26 @@
     </div>
 </div>
 
-{{!-- JS For Inputs --}}
-{{!-- <script src="../src/routers/playerDB.js"></script> --}}
+<p id="ErrorMessage"></p>
+<div class="slider">
+    <ul class="slides">
+            <li id="avatar">
+            </li>
+            <li id="head">
+            </li>
+            <li id="body">
+            </li>
+            <li id="skins">
+            </li>
+            <li id="capes">
+            </li>
+    </ul>
+</div>
+
+<script>
+     document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.slider');
+    var instances = M.Slider.init(elems);
+  });
+</script>
 <script src="/app.js"></script>

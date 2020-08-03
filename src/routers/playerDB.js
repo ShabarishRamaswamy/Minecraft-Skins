@@ -1,23 +1,33 @@
 const express = require('express')
 const axios = require('axios');
-const playerID = require('./craftar');
+const playerID = require('./getPlayerUuid');
 const router = express.Router()
-// const username = require('../../public/app')
-
-// Get Username from PlayerDB
-// axios.get(`https://playerdb.co/api/player/minecraft/shabarish`)
-//     .then((res) => {
-//         console.log(res.data)
-//     })
 
 router.get('/', (req, res) => {
     res.render('index', { title: 'Hello Everyone' });
 })
 
 router.get('/id/:username', (req, res) => {
-    // console.log(req.params.username)
-    const playerUuid = playerID(req.params.username)
-    res.send(playerUuid)
+    // var player_uuid;
+    if(!req.params.username){
+        res.send({"Error": "Please Give a Valid Input"})
+    }
+    playerID(req.params.username)
+        .then((uuid) => {
+            // player_uuid = uuid
+            // console.log(uuid)
+            res.send({
+                "avatar": `https://crafatar.com/avatars/${uuid}`,
+                "head": `https://crafatar.com/renders/head/${uuid}`,
+                "body": `https://crafatar.com/renders/body/${uuid}`,
+                "skins": `https://crafatar.com/skins/${uuid}`,
+                "capes": `https://crafatar.com/capes/${uuid}`,
+            })
+        })
+        .catch((e) => {
+            console.log(e)
+            res.send('An Error Occured. Try Again or Change the Searh term.')
+        })
 })
 
 router.get('/hello', (req, res) => {
