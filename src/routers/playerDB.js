@@ -1,5 +1,6 @@
 const express = require('express')
-const axios = require('axios')
+const axios = require('axios');
+const playerID = require('./craftar');
 const router = express.Router()
 // const username = require('../../public/app')
 
@@ -13,9 +14,10 @@ router.get('/', (req, res) => {
     res.render('index', { title: 'Hello Everyone' });
 })
 
-router.get('/:username', (req, res) => {
-    console.log(req.params.username)
-    res.render('index', { title: `Hello ${req.params.username}` });
+router.get('/id/:username', (req, res) => {
+    // console.log(req.params.username)
+    const playerUuid = playerID(req.params.username)
+    res.send(playerUuid)
 })
 
 router.get('/hello', (req, res) => {

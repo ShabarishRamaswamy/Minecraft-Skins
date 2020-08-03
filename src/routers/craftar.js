@@ -1,8 +1,12 @@
-const express = require('express')
-const router = express.Router()
+// const express = require('express')
+// const router = express.Router()
+const axios = require('axios')
 
-router.get('/hellothere', (req, res) => {
-    res.send('Hello')
-})
+const playerID = (username) => {
+    axios.get(`https://playerdb.co/api/player/minecraft/${username}`)
+        .then((res) => {
+            return res.raw_id
+        })
+}
 
-module.exports = router
+module.exports = playerID

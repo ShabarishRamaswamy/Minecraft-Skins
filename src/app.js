@@ -16,9 +16,9 @@ hbs.registerPartials(partialsPath)
 
 // Routes
 const usernameRouter = require('./routers/playerDB')
-const craftarRouter = require('./routers/craftar')
+// const craftarRouter = require('./routers/craftar')
 app.use(usernameRouter)
-app.use(craftarRouter)
+// app.use(craftarRouter)
 
 
 
