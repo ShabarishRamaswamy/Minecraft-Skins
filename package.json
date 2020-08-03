@@ -13,7 +13,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js -e js,hbs,css"
+    "dev": "nodemon src/app.js -e js,hbs,css",
+    "start": "node src/app.js"
   },
   "author": "",
   "license": "ISC"
