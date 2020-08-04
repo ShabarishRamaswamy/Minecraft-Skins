@@ -2,7 +2,7 @@
     <div class="nav-wrapper">
         <a href="#" class="brand-logo center"><i class="material-icons">beach_access</i></a>
         <a href="#" data-target="mobile-demo" class="right sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
+        <ul id="slider-tabs" class="right hide-on-med-and-down">
             <li><a href="#">About</a></li>
             <li><a href="#">Upcoming Projects</a></li>
         </ul>
@@ -13,10 +13,3 @@
     <li><a href="#">About</a></li>
     <li><a href="#">Upcoming Projects</a></li>
 </ul>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems);
-});
-</script>

@@ -3,7 +3,12 @@ background-color: black !important;
 }
 
 a {
-color: white !important;
+color: white;
+}
+
+#slider-tabs a{
+    color: black !important;
+    /* background-color: black; */
 }
 
 i{
@@ -14,15 +19,15 @@ i{
     position: relative;
     text-align: center;
     color: white;
-    }
+}
 
-    /* Centered text */
-    .centered {
+/* Centered text */
+.centered {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    }
+}
 
 #submit-button-icon {
     background-color: black !important;
